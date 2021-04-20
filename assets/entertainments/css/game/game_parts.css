@@ -1,0 +1,222 @@
+@charset "utf-8";
+
+
+
+/* game subnavigation 2015 */
+
+#main .game-navibox {
+  /* width: 679px; */
+  margin-top: 70px;
+  padding: 19px 16px 24px;
+  background-color: #fff;
+  overflow: hidden;
+  box-sizing: content-box;
+}
+
+#main .game-navibox .game-navibox_ttl,
+#main .game-navibox .btn_to_top a,
+#main .game-navibox .game_subnavi a.game_panel {
+  background-image: url(/imgcomp/assets/entertainments/images/game/sub_btn_01.png?ud=210308);
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+
+#main .game-navibox .game-navibox_ttl {
+  float: left;
+  width: 160px;
+  height: 20px;
+  background-position: 0px -57px;
+}
+
+#main .game-navibox .btn_to_top {
+  float: right;
+  /* width: 174px;
+  height: 20px; */
+}
+
+#main .game-navibox .btn_to_top a {
+  /* display: block;
+  width: 160px;
+  height: 20px;
+  background-position: 0px -77px; */
+  background: none;
+  position: relative;
+  font-size: 1.3rem;
+}
+#main .game-navibox .btn_to_top a::before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  border-radius: 100%;
+  background: rgb(208, 17, 27);
+  position: absolute;
+  top: 50%;
+  left: -20px;
+  transform: translate3d(0, -50%, 0);
+}
+#main .game-navibox .btn_to_top a::after {
+  content: '';
+  border-top: 1px solid #fff;
+  border-left: 1px solid #fff;
+  width: 3px;
+  height: 3px;
+  position: absolute;
+  top: 50%;
+  left: -15px;
+  transform:translate3d(0, -50%, 0) rotate(-45deg);
+}
+
+#main .game-navibox .btn_to_top a:hover {
+ text-decoration: underline;
+}
+
+#main .game-navibox .game_subnavi {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 3px;
+}
+
+#main .game-navibox .game_subnavi a.game_panel {
+  display: block;
+  width: 214px;
+  height: 48px;
+  margin-top: 16px;
+  border: 1px #e9e4d8 solid;
+}
+#main .game-navibox .game_subnavi .blank_panel {
+  display: block;
+  width: 216px;
+  height: 0;
+}
+
+
+#main .game-navibox .game_subnavi a.game_panel:hover {
+  border: 1px #d5cbb5 solid;
+}
+
+#main .game-navibox .game_subnavi a.game_panel .inner {
+  width: 214px;
+  height: 48px;
+  text-indent: -9999px;
+  overflow: hidden;
+  background-image:  url(/imgcomp/assets/entertainments/images/game/sub_btn_01.png?ud=210308);
+  background-repeat: no-repeat;
+  background-position: 0px 57px;
+}
+
+#main .game-navibox .game_subnavi a.game_panel:hover .inner {
+  background-position: 0px 0px;
+}
+
+#main .game-navibox .game_subnavi a.game_panel:hover .inner {
+  background-position: 0px 0px;
+}
+
+.game_subnavi #slot { background-position: 0px -117px; }
+.game_subnavi #roulette { background-position: 0px -174px; }
+.game_subnavi #blendq { background-position: 0px -288px; }
+.game_subnavi #miumini01 { background-position: 0px -345px; }
+.game_subnavi #mosaicquiz { background-position: 0px -630px; }
+.game_subnavi #quiz { background-position: 0px -744px; }
+.game_subnavi #survey { background-position: 0px -797px; }
+.game_subnavi #bigorsmall { background-position: 0px -915px; }
+.game_subnavi #sagashi { background-position: 0px -1029px; }
+.game_subnavi #kids { background-position: 0px -1140px; }
+.game_subnavi #uranai { background-position: 0px -853px; }
+
+@media screen and (max-width:767px) {
+  #main .game-navibox {
+    padding: 16px 8px;
+  }
+  #main .game-navibox .game_subnavi a.game_panel {
+    width: 140px;
+    margin-top: 16px;
+  }
+  #main .game-navibox .game_subnavi a.game_panel .inner {
+    width: 140px;
+  }
+  #main .game-navibox .game_subnavi .blank_panel {
+    width: 142px;
+  }
+  .game_subnavi #slot { background-position: -72px -117px; }
+  .game_subnavi #roulette { background-position: -72px -174px; }
+  .game_subnavi #blendq { background-position: -72px -288px; }
+  .game_subnavi #miumini01 { background-position: -72px -345px; }
+  .game_subnavi #mosaicquiz { background-position: -72px -630px; }
+  .game_subnavi #quiz { background-position: -72px -744px; }
+  .game_subnavi #survey { background-position: -72px -797px; }
+  .game_subnavi #bigorsmall { background-position: -72px -915px; }
+  .game_subnavi #sagashi { background-position: -72px -1029px; }
+  .game_subnavi #kids { background-position: -72px -1140px; }
+  .game_subnavi #uranai { background-position: -72px -853px; }
+}
+
+#main .game-navibox .game_infobox {
+  margin-top: 26px;
+  height: 44px;
+}
+
+#main .game-navibox .game_infobox li {
+  display: block;
+  float: left;
+  height: 44px;
+  width: 210px;
+}
+
+#main .game-navibox .game_infobox li p {
+  padding-top: 15px;
+  line-height: 100%;
+}
+
+.font_m #main .game-navibox .game_infobox li {
+  width: 220px;
+}
+
+.font_m #main .game-navibox .game_infobox li p {
+  padding-top: 14px;
+}
+
+.font_l #main .game-navibox .game_infobox li {
+  width: 230px;
+}
+
+.font_l #main .game-navibox .game_infobox li p {
+  padding-top: 13px;
+}
+
+#main .game-navibox .game_infobox .icon_pt,
+#main .game-navibox .game_infobox .icon_pr {
+  float: left;
+  width: 44px;
+  height: 44px;
+  margin-right: 8px;
+  background-image:  url(/imgcomp/assets/entertainments/images/game/btn_01.png?ud=201005);
+  background-repeat: no-repeat;
+}
+
+#main .game-navibox .game_infobox .icon_pt {
+  background-position: 0px -136px;
+}
+
+#main .game-navibox .game_infobox .icon_pr {
+  background-position: -51px -136px;
+}
+
+/* --- for 960px layout --- */
+
+.one #main .game-navibox {
+  width: 894px;
+  margin: 70px auto 0;
+  padding: 19px 13px 24px;
+}
+
+.one #main .game-navibox .game_subnavi {
+  width: 924px;
+}
+
+.one #main .game-navibox .game_subnavi a.game_panel {
+  margin-right: 10px;
+}

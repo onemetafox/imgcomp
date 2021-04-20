@@ -33,7 +33,7 @@ class Welcome extends AdminController {
 	}
 
 	public function event(){
-		
+		$this->load->view("public/index");
 	}
 	
 }
