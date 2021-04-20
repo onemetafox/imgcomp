@@ -70,7 +70,7 @@
                 <div class="col-lg-4 col-xl-4 p-2">
                   <div class="form-group row fv-plugins-icon-container">
                     <div class="input-group">
-                      <input type="text" class="form-control" name="position-<?=$i?>" type="text" value='<?=isset($files[$i])?$files[$i]["position"]:""?>' readonly>
+                      <input type="text" class="form-control" name="position-<?=$i?>" type="text" value='<?=isset($files[$i])?$files[$i]["position"]:"[]"?>' readonly>
                       <div class="input-group-append">
                         <button class="btn btn-default" onclick="delPos('<?= $i?>')"type="button">Clear</button>
                       </div>

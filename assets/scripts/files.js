@@ -43,12 +43,13 @@ function getPosition(index , evt){
 	var x = evt.pageX -parentOffset.left;
 	var y = evt.pageY -parentOffset.top;
 	
-	var point = [x, y];
-	var position = $("input[name=position-"+index+"]").val() + JSON.stringify(point);
-	$("input[name=position-"+index+"]").val(position);
+	var point = [Math.floor(x), Math.floor(y)];
+	var position = JSON.parse($("input[name=position-"+index+"]").val());
+	position.push(point);
+	$("input[name=position-"+index+"]").val(JSON.stringify(position));
 }
 function delPos(index){
-	$("input[name=position-"+index+"]").val("");
+	$("input[name=position-"+index+"]").val("[]");
 }
 function saveImg(index, id){
 	var temp1 = $(".image-"+index+"-1").css("background-image");

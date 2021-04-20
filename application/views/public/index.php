@@ -157,8 +157,9 @@
     <script>
         
         var index = '<?= isset($index)?$index:""?>';
-        // var positions = JSON.parse('[602,350]');
+        
         <?php if(isset($index)) {?>
+          var positions = JSON.parse('<?=$file["position"]?>');
           $('#circle').circleProgress({
               value: 1,
               size: 45,

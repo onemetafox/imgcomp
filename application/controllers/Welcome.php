@@ -35,7 +35,7 @@ class Welcome extends AdminController {
 	public function event($id, $index = null){
 		if($index){
 			$files = $this->file_model->getDataByParam(array("event_id"=>$id));
-			$data["file"] = $files[$index];
+			$data["file"] = $files[$index-1];
 			$data["index"] = $index;
 		}else{
 			$data["event"]=$this->event_model->getDataById($id);
