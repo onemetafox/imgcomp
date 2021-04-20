@@ -24,6 +24,7 @@
 		<link href="<?=asset_url()?>css/themes/layout/brand/light.css" rel="stylesheet" type="text/css" />
 		<link href="<?=asset_url()?>css/themes/layout/aside/dark.css" rel="stylesheet" type="text/css" />
 		<script src="<?=asset_url()?>js/jquery.js"></script>
+  
 
     <style>
         .card-header {
@@ -65,21 +66,18 @@
                             </div>
                         </div>
                         <div class="d-flex flex-column-fluid">
+                            
                             <div class="container">
+                                <?php if (isset($index)) { ?>
                                 <div class="d-flex flex-row">
                                     <div class="flex-row-fluid ml-lg-12">
                                         <div class="card card-custom">
                                             <div class="card-header">
-                                                <div class="col-3 col-3">
-                                                    <div class="flex-shrink-0 mt-lg-0">
-                                                        <div class="symbol symbol-circle symbol-lg-75">
-                                                            <img src="<?= asset_url()?>images/time_base.png" alt="image">
-                                                        </div>
-                                                    </div>
-                                                    
+                                                <div class="col-3 col-3 d-flex flex-center">
+                                                    <div id="circle"></div>
                                                 </div>
                                                 <div class="col-6 col-6 d-flex flex-center">
-                                                    <span class="font-size-h1 d-block d-block font-weight-boldest text-dark-75 py-2">Stage 1</span>
+                                                    <span class="font-size-h1 d-block d-block font-weight-boldest text-dark-75 py-2">Stage <?=$index?></span>
                                                 </div>
                                                 <div class="col-3 col-3">
                                                     <div class="flex-shrink-0 mt-lg-0">
@@ -93,18 +91,30 @@
                                             <div class="card-body">
                                                 <div class="col-lg-4 col-xl-4 d-flex flex-center">
                                                     <div class="image-input image-input-outline" id="kt_image_0">
-                                                        <div class="image-input-wrapper image-0" style="background-image: url(/imgcomp/uploads/1.jpg)"></div>
+                                                        <div class="image-input-wrapper" style="background-image: url(<?= upload_url().$file["img_1"]?>)"></div>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-4 col-xl-4 d-flex flex-center">
                                                     <div class="image-input image-input-outline" id="kt_image_0">
-                                                        <div class="image-input-wrapper image-0" style="background-image: url(/imgcomp/uploads/1_1.jpg)"></div>
+                                                        <div class="image-input-wrapper detail" onclick="getPosition(event)" style="background-image: url(<?= upload_url().$file["img_2"]?>)"></div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                <?php } else{?>
+                                  <div class="pt-30 pt-md-25 pb-15 px-5 text-center">
+                                      <!--begin::Content-->
+                                      <span class="font-size-h1 d-block d-block font-weight-boldest text-dark-75 py-2"><?= $event["title"]?></span>
+                                      <h4 class="font-size-h6 d-block d-block font-weight-bold mb-7 text-dark-50"><?= $event["start_date"]?>~<?= $event["end_date"]?></h4>
+                                      <p class="mb-15 d-flex flex-column">
+                                          <?= $event["content"]?>
+                                      </p>
+                                      <a href="<?=base_url()?>welcome/event/<?=$event["id"]?>/1" class="btn btn-primary text-uppercase font-weight-bolder px-15 py-3">Start Game</a>
+                                      <!--end::Content-->
+                                    </div>
+                                <?php }?>
                             </div>
                         </div>
                     </div>
@@ -143,6 +153,36 @@
 		<!--end::Page Vendors-->
 		<!--begin::Page Scripts(used by this page)-->
 		<script src="<?=asset_url()?>js/pages/widgets.js"></script>
+    <script src="<?= asset_url()?>js/jquery-circle-clock.js"></script>
+    <script>
+        
+        var index = '<?= isset($index)?$index:""?>';
+        // var positions = JSON.parse('[602,350]');
+        <?php if(isset($index)) {?>
+          $('#circle').circleProgress({
+              value: 1,
+              size: 45,
+              fill: {
+                  gradient: ["blue", "orange", "red"]
+              },
+              reverse : true,
+              animation:{ duration: 30000, easing: "circleProgressEasing" },
+              startAngle: 0
+          }).on('circle-animation-end', function(event, progress, stepValue) {
+              alert("Time Over! You can't go on");
+              window.location="<?= base_url()?>welcome/event/<?=$file["event_id"]?>";
+          });
+        <?php } ?>
+
+        function getPosition(evt){
+            var parentOffset = $(".detail").parent().offset();
+            var x = evt.pageX -parentOffset.left;
+            var y = evt.pageY -parentOffset.top;
+            
+            var point = [x, y];
+            console.log(point);
+        }
+    </script>
 		<!--end::Page Scripts-->
 	</body>
 	<!--end::Body-->

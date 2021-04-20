@@ -43,7 +43,7 @@ function getPosition(index , evt){
 	var x = evt.pageX -parentOffset.left;
 	var y = evt.pageY -parentOffset.top;
 	
-	var point = [Math.floor(x *2), Math.floor(y *2)];
+	var point = [x, y];
 	var position = $("input[name=position-"+index+"]").val() + JSON.stringify(point);
 	$("input[name=position-"+index+"]").val(position);
 }

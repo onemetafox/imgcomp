@@ -32,8 +32,15 @@ class Welcome extends AdminController {
 		$this->render("admin/events", $data);		
 	}
 
-	public function event(){
-		$this->load->view("public/index");
+	public function event($id, $index = null){
+		if($index){
+			$files = $this->file_model->getDataByParam(array("event_id"=>$id));
+			$data["file"] = $files[$index];
+			$data["index"] = $index;
+		}else{
+			$data["event"]=$this->event_model->getDataById($id);
+		}
+		$this->load->view("public/index", $data);
 	}
 	
 }
