@@ -1,121 +1,149 @@
 <!DOCTYPE html>
-<!-- saved from url=(0047)https://www.dydo.co.jp/sp/kids/machigaisagashi/ -->
-<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><!-- Global site tag (gtag.js) - Google Analytics -->
-<script type="text/javascript" async="" src="<?=asset_url()?>assets/analytics.js"></script><script async="" src="<?=asset_url()?>assets/js"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<html lang="en">
+	<!--begin::Head-->
+	<head><base href="../../">
+		<meta charset="utf-8" />
+		<title>No Aside | Keenthemes</title>
+		<meta name="description" content="No aside layout examples" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+		<link rel="canonical" href="https://keenthemes.com/metronic" />
+		<!--begin::Fonts-->
+		<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" /> -->
+		<!--end::Fonts-->
+		<!--begin::Page Vendors Styles(used by this page)-->
+		<link href="<?=asset_url()?>plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
+		<!--end::Page Vendors Styles-->
+		<!--begin::Global Theme Styles(used by all pages)-->
+		<link href="<?=asset_url()?>plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="<?=asset_url()?>plugins/custom/prismjs/prismjs.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="<?=asset_url()?>css/style.bundle.css" rel="stylesheet" type="text/css" />
+		<!--end::Global Theme Styles-->
+		<!--begin::Layout Themes(used by all pages)-->
+		<link href="<?=asset_url()?>css/themes/layout/header/base/light.css" rel="stylesheet" type="text/css" />
+		<link href="<?=asset_url()?>css/themes/layout/header/menu/light.css" rel="stylesheet" type="text/css" />
+		<link href="<?=asset_url()?>css/themes/layout/brand/light.css" rel="stylesheet" type="text/css" />
+		<link href="<?=asset_url()?>css/themes/layout/aside/dark.css" rel="stylesheet" type="text/css" />
+		<script src="<?=asset_url()?>js/jquery.js"></script>
 
-  gtag('config', 'UA-27203476-1');
-</script>
+    <style>
+        .card-header {
+            border: solid 2px #f25c04;
+            margin: 10px;
+            border-radius: calc(0.42rem - 1px) !important;
+        }
+        .image-input .image-input-wrapper {
+            width: 320px !important;
+            height: 230px !important;
+        }
+        .col-3{
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+    </style>
+		<!--end::Layout Themes-->
+		<link rel="shortcut icon" href="<?=asset_url()?>media/logos/favicon.ico" />
+	</head>
+	<!--end::Head-->
+	<!--begin::Body-->
+	<body id="kt_body" class="header-fixed header-mobile-fixed subheader-enabled subheader-fixed page-loading">
+        <div class="d-flex flex-column flex-root">
+            <!--begin::Page-->
+            <div class="d-flex flex-row flex-column-fluid page">
+                <!--begin::Wrapper-->
+                <div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper" style="padding-top:0px;">
+                    <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+                        <div class="subheader py-2 py-lg-6 subheader-solid" id="kt_subheader">
+                            <div class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
+                                <div class="d-flex align-items-center flex-wrap mr-1">
+                                    <button class="burger-icon burger-icon-left mr-4 d-inline-block d-lg-none" id="kt_subheader_mobile_toggle">
+                                        <span></span>
+                                    </button>
+                                    <div class="d-flex align-items-baseline flex-wrap mr-5">
+                                        <h5 class="text-dark font-weight-bold my-1 mr-5">page</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column-fluid">
+                            <div class="container">
+                                <div class="d-flex flex-row">
+                                    <div class="flex-row-fluid ml-lg-12">
+                                        <div class="card card-custom">
+                                            <div class="card-header">
+                                                <div class="col-3 col-3">
+                                                    <div class="flex-shrink-0 mt-lg-0">
+                                                        <div class="symbol symbol-circle symbol-lg-75">
+                                                            <img src="<?= asset_url()?>images/time_base.png" alt="image">
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </div>
+                                                <div class="col-6 col-6 d-flex flex-center">
+                                                    <span class="font-size-h1 d-block d-block font-weight-boldest text-dark-75 py-2">Stage 1</span>
+                                                </div>
+                                                <div class="col-3 col-3">
+                                                    <div class="flex-shrink-0 mt-lg-0">
+                                                        <div class="symbol symbol-circle symbol-lg-75">
+                                                            <img src="<?= asset_url()?>images/time_base.png" alt="image">
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="col-lg-4 col-xl-4 d-flex flex-center">
+                                                    <div class="image-input image-input-outline" id="kt_image_0">
+                                                        <div class="image-input-wrapper image-0" style="background-image: url(/imgcomp/uploads/1.jpg)"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4 col-xl-4 d-flex flex-center">
+                                                    <div class="image-input image-input-outline" id="kt_image_0">
+                                                        <div class="image-input-wrapper image-0" style="background-image: url(/imgcomp/uploads/1_1.jpg)"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer bg-white py-4 d-flex flex-lg-column" id="kt_footer">
+                      <div class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between">
+                          <div class="text-dark order-2 order-md-1">
+                              <span class="text-muted font-weight-bold mr-2">2021©</span>
+                              <a href="http://keenthemes.com/metronic" target="_blank" class="text-dark-75 text-hover-primary">Keenthemes</a>
+                          </div>
 
-  <!-- ga_here -->
-  
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>まちがいさがし｜ダイドードリンコ</title>
-  <meta name="keywords" content="DyDo,ダイドードリンコ,ダイドー,エンターテイメント,エンターテインメント,エンタメ,お楽しみ,ゲーム,ポイント,会員,無料,ルーレット">
-  <meta name="description" content="ダイドードリンコのウェブサイトで遊べるゲームです。">
-
-  <meta property="og:title" content="ダイドードリンコ｜まちがいさがし">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.dydo.co.jp/kids/machigaisagashi/">
-  <meta property="og:image" content="https://www.dydo.co.jp/update/images/ogp/game.jpg">
-  <meta property="og:site_name" content="ダイドードリンコ">
-  <meta property="og:description" content="DyDoオリジナルゲームを楽しみながらポイントを貯めて、プレゼント応募！">
-
-  <!-- icon -->
-  <link rel="icon" href="https://www.dydo.co.jp/favicon.ico">
-
-  <!-- css -->
-  <link href="<?= asset_url()?>assets/import.css" rel="stylesheet" type="text/css">
-
-</head>
-
-<body class="machigaisagashi game_index">
-<script src="<?= asset_url()?>assets/swiper.min.js"></script>
-
-
-  <div class="ent_wrapper">
-
-    <div id="main" class="l-col1">
-      <article>
-
-	    <section id="machigaisagashi_sp">
-
-		  <div id="game_base" style="height: 825px;">
-			  <div id="sample_base" style="background-image: url(&quot;/kids/machigaisagashi/idata/image27.jpg&quot;);"></div>
-			  <div id="panel_base" style="background-image: url(&quot;/kids/machigaisagashi/idata/image2705.jpg&quot;);"><div class="cover cover_2"></div><div class="res_1" style="width: 58px; height: 44px; opacity: 1;"><div class="flg">1</div><div class="res" style="top: 0px; left: 0px; overflow: hidden; width: 58px; height: 44px;"></div></div><div class="res_0" style="width: 58px; height: 44px; opacity: 1;"><div class="flg">1</div><div class="res" style="top: 0px; left: 0px; overflow: hidden; width: 58px; height: 44px;"></div></div><div class="res_0" style="width: 58px; height: 44px; opacity: 1;"><div class="flg">1</div><div class="res" style="top: 0px; left: 0px; overflow: hidden; width: 58px; height: 44px;"></div></div><div class="res_1" style="width: 58px; height: 44px; opacity: 1;"><div class="flg">1</div><div class="res" style="top: 0px; left: 0px; overflow: hidden; width: 58px; height: 44px;"></div></div><div class="res_0" style="width: 58px; height: 44px; opacity: 1;"><div class="flg">1</div><div class="res" style="top: 0px; left: 0px; overflow: hidden; width: 58px; height: 44px;"></div></div><div class="res_1" style="width: 58px; height: 44px; opacity: 1;"><div class="flg">1</div><div class="res" style="top: 0px; left: 0px; overflow: hidden; width: 58px; height: 44px;"></div></div><div class="res_1" style="width: 58px; height: 44px; opacity: 1;"><div class="flg">1</div><div class="res" style="top: 0px; left: 0px; overflow: hidden; width: 58px; height: 44px;"></div></div><div class="res_0" style="width: 58px; height: 44px; opacity: 1;"><div class="flg">1</div><div class="res" style="top: 0px; left: 0px; overflow: hidden; width: 58px; height: 44px;"></div></div><div class="res_0" style="width: 58px; height: 44px; opacity: 1;"><div class="flg">1</div><div class="res" style="top: 0px; left: 0px; overflow: hidden; width: 58px; height: 44px;"></div></div><div class="res_1" style="width: 58px; height: 44px; opacity: 1;"><div class="flg">1</div><div class="res" style="top: 0px; left: 0px; overflow: hidden; width: 58px; height: 44px;"></div></div><div class="res_0" style="width: 58px; height: 44px; opacity: 1;"><div class="flg">1</div><div class="res" style="top: 0px; left: 0px; overflow: hidden; width: 58px; height: 44px;"></div></div><div class="res_1" style="width: 58px; height: 44px; opacity: 1;"><div class="flg">1</div><div class="res" style="top: 0px; left: 0px; overflow: hidden; width: 58px; height: 44px;"></div></div><div class="res_1" style="width: 58px; height: 44px; opacity: 1;"><div class="flg">1</div><div class="res" style="top: 0px; left: 0px; overflow: hidden; width: 58px; height: 44px;"></div></div><div class="res_0" style="width: 58px; height: 44px; opacity: 1;"><div class="flg">1</div><div class="res" style="top: 0px; left: 0px; overflow: hidden; width: 58px; height: 44px;"></div></div><div class="res_1" style="width: 58px; height: 44px; opacity: 1;"><div class="flg">1</div><div class="res" style="top: 0px; left: 0px; overflow: hidden; width: 58px; height: 44px;"></div></div><div class="res_1" style="width: 58px; height: 44px; opacity: 1;"><div class="flg">1</div><div class="res" style="top: 0px; left: 0px; overflow: hidden; width: 58px; height: 44px;"></div></div></div>
-			  <div id="shutter" style="overflow: hidden; height: 0px;"></div>
-			  <div id="shutter2" style="overflow: hidden; height: 0px;"></div>
-			  <div id="base_image"></div>
-			  <div id="stage" style="background-image: url(&quot;img/stage_2.png&quot;);">STAGE</div>
-			  <div id="score">2</div>
-			  <div id="timer" style="z-index: 0;">
-			    <div style="transform: rotate(0deg);"></div>
-			  </div>
-			  <div id="face" style="background-image: url(&quot;img/face4.png&quot;);"></div>
-			  <div id="sound" style="top: 520px; left: 19px; z-index: 0;"></div>
-			  <div id="find">0</div>
-			  <div id="task">9</div>
-			  <div id="score_anim" style="background-image: url(&quot;img/plus.png&quot;); top: 309px; opacity: 0; display: block;">+1</div>
-			  <div id="info" style="display: none;">上の絵とちがうところをクリックしよう！</div>
-			  <div id="count" style="background-image: url(&quot;img/clear.png&quot;); top: 337px; left: 91px; width: 200px; height: 100px; overflow: hidden; display: block;"></div>
-			  <div id="howto" style="display: none;">
-			    <div class="present">今月のプレゼント</div>
-			  </div>
-			  <div id="btn_start" style="top: 286.797px; display: none;">START</div>
-			  <div id="btn_back_number" style="top: 731.797px;">BACK_NUMBER</div>
-			  <div id="result" style="display: block;">
-			    <div id="score_1">0</div>
-			    <div id="score_2">2</div>
-			    <div id="score_total">2</div>
-			    <div id="score_parfect" style="display: none;"></div>
-			    <div id="congra" style="background-image: url(&quot;img/calmdown.png&quot;);"></div>
-			    <div class="present">今月のプレゼント</div>
-			  </div>
-			  <div id="foot" style="bottom: 0px; display: block;"></div>
-			  <a href="https://www.dydo.co.jp/sp/kids/machigaisagashi/#" class="btn_present" style="display: none;">プレゼント応募</a>
-			  <a href="https://www.dydo.co.jp/sp/kids/machigaisagashi/#" class="btn_point" style="top: 628.693px; display: inline;">マンスリーポイントを獲得する</a>
-			  <a href="https://www.dydo.co.jp/sp/kids/machigaisagashi/#" class="btn_again" style="top: 703.693px; display: inline;">もういちどさいしょから</a>
-		  </div><!-- /game_base -->
-
-	    </section>
-      </article>
-    </div><!-- main -->
-
-  </div>
-</div>
-
-
-  <!-- scripts -->
-  <script>
-    var ASSETS_URL = '<?=asset_url()?>';
-  </script>
-  <script src="<?= asset_url()?>assets/import.js"></script><script type="text/javascript" src="<?= asset_url()?>assets/jquery.js"></script><script type="text/javascript" src="<?= asset_url()?>assets/jquery.cookie.js"></script><script type="text/javascript" src="<?= asset_url()?>assets/jquery.lightbox.js"></script><script type="text/javascript" src="<?= asset_url()?>assets/common.js"></script><script type="text/javascript" src="<?= asset_url()?>assets/swfobject.js"></script>
-  <script type="text/javascript" src="<?= asset_url()?>assets/jquery.easing.1.3.js"></script>
-  <script type="text/javascript" src="<?= asset_url()?>assets/buffer-loader.js"></script>
-  <script type="text/javascript" src="<?= asset_url()?>assets/soundjs-0.6.1.min.js"></script>
-  <script type="text/javascript" src="<?= asset_url()?>assets/jquery-ui.js"></script>
-  <script type="text/javascript" src="<?= asset_url()?>assets/game.js"></script>
-  <script src="<?= asset_url()?>assets/szchk.js"></script>
-  <!-- /scripts -->
-
-  <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-          {"@type": "ListItem","position":1,"item": {"@id": "https://www.dydo.co.jp/","name": "ダイドードリンコ株式会社"}},
-          {"@type": "ListItem","position":2,"item": {"@id": "https://www.dydo.co.jp/entertainments/","name": "知る・楽しむ"}},
-          {"@type": "ListItem","position":2,"item": {"@id": "https://www.dydo.co.jp/entertainments/contents/","name": "楽しむ"}},
-          {"@type": "ListItem","position":3,"item": {"@id": "https://www.dydo.co.jp/kids/machigaisagashi/","name": "まちがいさがし"}}
-      ]
-    }
-  </script>
-
-
-
-</body></html>
+                          <div class="nav nav-dark">
+                              <a href="http://keenthemes.com/metronic" target="_blank" class="nav-link pl-0 pr-5">About</a>
+                              <a href="http://keenthemes.com/metronic" target="_blank" class="nav-link pl-0 pr-5">Team</a>
+                              <a href="http://keenthemes.com/metronic" target="_blank" class="nav-link pl-0 pr-0">Contact</a>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                <!--end::Wrapper-->
+            </div>
+            <!--end::Page-->
+        </div>
+        <!--end::Demo Panel-->
+		<!--begin::Global Config(global config for global JS scripts)-->
+		<script>var KTAppSettings = { "breakpoints": { "sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1400 }, "colors": { "theme": { "base": { "white": "#ffffff", "primary": "#3699FF", "secondary": "#E5EAEE", "success": "#1BC5BD", "info": "#8950FC", "warning": "#FFA800", "danger": "#F64E60", "light": "#E4E6EF", "dark": "#181C32" }, "light": { "white": "#ffffff", "primary": "#E1F0FF", "secondary": "#EBEDF3", "success": "#C9F7F5", "info": "#EEE5FF", "warning": "#FFF4DE", "danger": "#FFE2E5", "light": "#F3F6F9", "dark": "#D6D6E0" }, "inverse": { "white": "#ffffff", "primary": "#ffffff", "secondary": "#3F4254", "success": "#ffffff", "info": "#ffffff", "warning": "#ffffff", "danger": "#ffffff", "light": "#464E5F", "dark": "#ffffff" } }, "gray": { "gray-100": "#F3F6F9", "gray-200": "#EBEDF3", "gray-300": "#E4E6EF", "gray-400": "#D1D3E0", "gray-500": "#B5B5C3", "gray-600": "#7E8299", "gray-700": "#5E6278", "gray-800": "#3F4254", "gray-900": "#181C32" } }, "font-family": "Poppins" };</script>
+		<!--end::Global Config-->
+		<!--begin::Global Theme Bundle(used by all pages)-->
+	
+		<script src="<?=asset_url()?>plugins/global/plugins.bundle.js"></script>
+		<script src="<?=asset_url()?>plugins/custom/prismjs/prismjs.bundle.js"></script>
+		<script src="<?=asset_url()?>js/scripts.bundle.js"></script>
+		<!--end::Global Theme Bundle-->
+		<!--begin::Page Vendors(used by this page)-->
+		<script src="<?=asset_url()?>plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
+		<script src="<?=asset_url()?>plugins/custom/gmaps/gmaps.js"></script>
+		<!--end::Page Vendors-->
+		<!--begin::Page Scripts(used by this page)-->
+		<script src="<?=asset_url()?>js/pages/widgets.js"></script>
+		<!--end::Page Scripts-->
+	</body>
+	<!--end::Body-->
+</html>
