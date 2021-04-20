@@ -43,7 +43,7 @@ class Events extends AdminController {
 		else
 		{
 				$file =$this->upload->data();
-				$this->event_model->updateData(array("img"=>$file["file_name"], "id"=>$event_id));
+				$this->event_model->updateData(array("bage"=>$file["file_name"], "id"=>$event_id));
 				$this->json(array("success"=>true, "msg"=>"Success"));
 		}
 		$this->json(array("success" => true, "msg"=>"Success!"));

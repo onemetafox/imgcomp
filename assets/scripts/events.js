@@ -179,28 +179,27 @@ var KTDatatableRemoteAjaxDemo = function() {
     var temp = function (){
         $("form").submit(function (event) {
             var paramObj = new FormData($("form#kt_form")[0]);
-           
             var files = $('#bage')[0].files;
             // Check file selected or not
             if(files.length > 0 ){
                 paramObj.append('file',files[0]);
             }
             $.ajax({
-                type: "POST",
                 url: HOST_URL + "admin/events/save",
+                type: 'post',
                 data: paramObj,
-                dataType: "json",
-                encode: true,
-            }).done(function (data) {
-                if (data["success"] == true ){
-                    toastr.success(data["msg"]);
-                    $("#kt_select2_modal").modal('hide');
-                    datatable.reload()
-                }else{
-                    toastr.error(data["msg"]);
-                }
-              
+                contentType: false,
+                processData: false,
+                success: function(response){
+                    var data = JSON.parse(response);
+                    if(data.success == true){
+                        toastr.success(data.msg);
+                    }else{
+                        toastr.error(data.msg)
+                    }
+                },
             });
+        
             event.preventDefault();
         });
     }

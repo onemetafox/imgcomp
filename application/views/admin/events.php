@@ -51,7 +51,7 @@
           <i aria-hidden="true" class="ki ki-close"></i>
         </button>
       </div>
-      <form class="form" id ="kt_form">
+      <form class="form" id ="kt_form" enctype="multipart/form-data">
         <div class="modal-body">
           <div class="form-group row">
             <input type="hidden" id="id" name="id">
