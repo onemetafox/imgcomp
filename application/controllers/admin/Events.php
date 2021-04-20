@@ -65,12 +65,15 @@ class Events extends AdminController {
 		$this->json($data);
 	}
 
-	public function qrGenerator($id){
+	public function qrGen(){
+		$id = $this->input->post("id");
 		$this->load->library('ciqrcode');
 		$params['data'] = "http://$_SERVER[HTTP_HOST]" . base_url()."welcome/event/".$id;
 		$params['level'] = 'H';
 		$params['size'] = 10;
 		$params['savename'] = 'uploads/qr/' . $id .'.png';
 		$this->ciqrcode->generate($params);
+		$this->event_model->updateData(array("qr_code"=>$id.".png", "id"=>$id));
+		$this->json(array("success"=>true, "msg"=> "Success!"));
 	}
 }

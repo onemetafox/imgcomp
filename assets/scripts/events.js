@@ -85,10 +85,34 @@ var KTDatatableRemoteAjaxDemo = function() {
             }, {
                 field: 'bage',
                 title: 'Bage Image',
+                sortable: false,
+                overflow: 'visible',
+                autoHide: false,
                 template: function(row) {
-                    return '\
-                        <img style="width:30px; height:30px" src="'+HOST_URL+'uploads/bage/'+row.bage+'" alt="image">\
-                    ';
+                    if(row.bage){
+                        return '\
+                            <img style="width:30px; height:30px" src="'+HOST_URL+'uploads/bage/'+row.bage+'" alt="image">\
+                        ';
+                    }else{
+                        return "";
+                    }
+                    
+                },
+            }, {
+                field: 'qr_code',
+                title: 'QR Image',
+                sortable: false,
+                overflow: 'visible',
+                autoHide: false,
+                template: function(row) {
+                    if(row.qr_code){
+                        return '\
+                            <img style="width:30px; height:30px" src="'+HOST_URL+'uploads/qr/'+row.qr_code+'" alt="image">\
+                        ';
+                    }else{
+                        return "";
+                    }
+                    
                 },
             }, {
                 field: 'Actions',
@@ -109,7 +133,7 @@ var KTDatatableRemoteAjaxDemo = function() {
                             </svg>\
                         </span>\
                     </a>\
-                    <a href="'+HOST_URL +'admin/events/qrGenerator/' +row.id+'" class="btn btn-icon btn-light btn-hover-primary btn-sm" title="Generate QR Code">\
+                    <a href="javascript:qrGen('+row.id+')" class="btn btn-icon btn-light btn-hover-primary btn-sm" title="Generate QR Code">\
                         <span class="svg-icon svg-icon-md svg-icon-primary"><!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo1\dist/../src/media/svg/icons\Communication\Send.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">\
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">\
                                 <rect x="0" y="0" width="24" height="24"/>\
@@ -160,9 +184,6 @@ var KTDatatableRemoteAjaxDemo = function() {
             // Check file selected or not
             if(files.length > 0 ){
                 paramObj.append('file',files[0]);
-            }else{
-                // toastr.error("Please select a file.");
-                // return;
             }
             $.ajax({
                 type: "POST",
@@ -219,7 +240,19 @@ function onEdit(id){
         $("#kt_select2_modal").modal('show');
     });
 }
-
+function qrGen(id){
+    $.ajax({
+        type: "POST",
+        url: HOST_URL + "admin/events/qrGen",
+        data: {"id" : id },
+        dataType: "json",
+        encode: true,
+    }).done(function (data) {
+        // if(data["success"] == true){}
+        toastr.success("Sucess");
+        datatable.reload();
+    }); 
+}
 function onDel(id){
     $.ajax({
         type: "POST",
