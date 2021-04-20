@@ -88,7 +88,6 @@ class Ciqrcode
 			
 			$size = 4;
 			if (isset($params['size'])) $size = min(max((int)$params['size'], 1), 10);
-			
 			QRcode::png($params['data'], $params['savename'], $level, $size, 2);
 			return $params['savename'];
 		} else {

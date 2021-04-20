@@ -75,7 +75,7 @@
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-form-label text-right col-lg-3 col-sm-12">Range Picker</label>
+            <label class="col-form-label text-right col-lg-3 col-sm-12">Event Range</label>
             <div class="col-lg-9 col-md-9 col-sm-12">
               <div class="input-daterange input-group" id="kt_datepicker_5">
                 <input type="text" class="form-control" name="start_date" id ="start_date"/>
@@ -86,6 +86,12 @@
                 </div>
                 <input type="text" class="form-control" name="end_date" id="end_date" />
               </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label text-right col-lg-3 col-sm-12">Bage Image</label>
+            <div class="col-lg-9 col-md-9 col-sm-12">
+              <input type="file" name="bage" id="bage"/>
             </div>
           </div>
         </div>

@@ -21,12 +21,32 @@ class Events extends AdminController {
 		$data = $this->input->post();
 		if($data["id"]){
 			$this->event_model->updateData($data);
-			$this->json(array("success" => true, "msg"=>"Success!"));
+			$event_id = $data["id"];
 		}else{
 			$data["created_at"] = date("Y-m-d h:s:i");
-			$this->event_model->setData($data);
-			$this->json(array("success" => true, "msg"=>"Success!"));
+			$event_id = $this->event_model->setData($data);
 		}
+		$config['upload_path']          = './uploads/bage';
+		$config['allowed_types']        = 'gif|jpg|png';
+		$config['max_size']             = 100;
+		$config['max_width']            = 1024;
+		$config['max_height']           = 768;
+		$config['file_name']			= $event_id;
+
+		$this->load->library('upload', $config);
+
+		if ( ! $this->upload->do_upload('bage'))
+		{
+				$error = array('error' => $this->upload->display_errors());
+				print_r($error);
+		}
+		else
+		{
+				$file =$this->upload->data();
+				$this->event_model->updateData(array("img"=>$file["file_name"], "id"=>$event_id));
+				$this->json(array("success"=>true, "msg"=>"Success"));
+		}
+		$this->json(array("success" => true, "msg"=>"Success!"));
 	}
 	public function view($id){
 		$data["page_title"] = "Files";
@@ -45,7 +65,12 @@ class Events extends AdminController {
 		$this->json($data);
 	}
 
-	public function qrGenerate(){
-		
+	public function qrGenerator($id){
+		$this->load->library('ciqrcode');
+		$params['data'] = "http://$_SERVER[HTTP_HOST]" . base_url()."welcome/event/".$id;
+		$params['level'] = 'H';
+		$params['size'] = 10;
+		$params['savename'] = 'uploads/qr/' . $id .'.png';
+		$this->ciqrcode->generate($params);
 	}
 }

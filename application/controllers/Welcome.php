@@ -31,5 +31,9 @@ class Welcome extends AdminController {
 		$data["page_title"] = "Events";
 		$this->render("admin/events", $data);		
 	}
+
+	public function event(){
+		
+	}
 	
 }

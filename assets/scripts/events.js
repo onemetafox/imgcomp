@@ -83,15 +83,23 @@ var KTDatatableRemoteAjaxDemo = function() {
                 field: 'created_at',
                 title: 'Created Date'
             }, {
+                field: 'bage',
+                title: 'Bage Image',
+                template: function(row) {
+                    return '\
+                        <img style="width:30px; height:30px" src="'+HOST_URL+'uploads/bage/'+row.bage+'" alt="image">\
+                    ';
+                },
+            }, {
                 field: 'Actions',
                 title: 'Actions',
                 sortable: false,
-                width: 125,
+                width: 240,
                 overflow: 'visible',
                 autoHide: false,
                 template: function(row) {
                     return '\
-                    <a href="'+HOST_URL +'admin/events/view/' +row.id+'" class="btn btn-icon btn-light btn-hover-primary btn-sm">\
+                    <a href="'+HOST_URL +'admin/events/view/' +row.id+'" class="btn btn-icon btn-light btn-hover-primary btn-sm" title="Set Image Pair">\
                         <span class="svg-icon svg-icon-md svg-icon-primary">\
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">\
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">\
@@ -101,7 +109,15 @@ var KTDatatableRemoteAjaxDemo = function() {
                             </svg>\
                         </span>\
                     </a>\
-                    <a href="javascript:onEdit('+row.id+')" class="btn btn-icon btn-light btn-hover-primary btn-sm mx-3 edit_btn">\
+                    <a href="'+HOST_URL +'admin/events/qrGenerator/' +row.id+'" class="btn btn-icon btn-light btn-hover-primary btn-sm" title="Generate QR Code">\
+                        <span class="svg-icon svg-icon-md svg-icon-primary"><!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo1\dist/../src/media/svg/icons\Communication\Send.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">\
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">\
+                                <rect x="0" y="0" width="24" height="24"/>\
+                                <path d="M3,13.5 L19,12 L3,10.5 L3,3.7732928 C3,3.70255344 3.01501031,3.63261921 3.04403925,3.56811047 C3.15735832,3.3162903 3.45336217,3.20401298 3.70518234,3.31733205 L21.9867539,11.5440392 C22.098181,11.5941815 22.1873901,11.6833905 22.2375323,11.7948177 C22.3508514,12.0466378 22.2385741,12.3426417 21.9867539,12.4559608 L3.70518234,20.6826679 C3.64067359,20.7116969 3.57073936,20.7267072 3.5,20.7267072 C3.22385763,20.7267072 3,20.5028496 3,20.2267072 L3,13.5 Z" fill="#000000"/>\
+                            </g>\
+                        </svg><!--end::Svg Icon--></span>\
+                    </a>\
+                    <a href="javascript:onEdit('+row.id+')" class="btn btn-icon btn-light btn-hover-primary btn-sm edit_btn" title = "Edit">\
                         <span class="svg-icon svg-icon-md svg-icon-primary">\
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">\
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">\
@@ -112,7 +128,7 @@ var KTDatatableRemoteAjaxDemo = function() {
                             </svg>\
                         </span>\
                     </a>\
-                    <a href="javascript:onDel('+row.id+')" class="btn btn-icon btn-light btn-hover-primary btn-sm">\
+                    <a href="javascript:onDel('+row.id+')" class="btn btn-icon btn-light btn-hover-primary btn-sm" title="Delete">\
                         <span class="svg-icon svg-icon-md svg-icon-primary">\
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">\
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">\
@@ -138,18 +154,20 @@ var KTDatatableRemoteAjaxDemo = function() {
     };
     var temp = function (){
         $("form").submit(function (event) {
-            var formData = {
-                title: $("#title").val(),
-                content: $("#content").val(),
-                input_user: $("#input_user").val(),
-                start_date: $("#start_date").val(),
-                end_date: $("#end_date").val(),
-                id: $("#id").val(),
-            };
+            var paramObj = new FormData($("form#kt_form")[0]);
+           
+            var files = $('#bage')[0].files;
+            // Check file selected or not
+            if(files.length > 0 ){
+                paramObj.append('file',files[0]);
+            }else{
+                // toastr.error("Please select a file.");
+                // return;
+            }
             $.ajax({
                 type: "POST",
                 url: HOST_URL + "admin/events/save",
-                data: formData,
+                data: paramObj,
                 dataType: "json",
                 encode: true,
             }).done(function (data) {
