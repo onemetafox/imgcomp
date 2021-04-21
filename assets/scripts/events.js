@@ -1,3 +1,7 @@
+arrows = {
+    leftArrow: '<i class="la la-angle-right"></i>',
+    rightArrow: '<i class="la la-angle-left"></i>'
+}
 var datatable;
 /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
@@ -168,6 +172,12 @@ var KTDatatableRemoteAjaxDemo = function() {
             }],
 
         });
+        $('#kt_datepicker_5').datepicker({
+            todayHighlight: true,
+            templates: arrows,
+            format: "yyyy-mm-dd"
+        });
+
         $("#new_btn").on("click", function(){
             // $('#form')[0].reset();
             $("#id").val("");
