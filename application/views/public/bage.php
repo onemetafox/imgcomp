@@ -132,7 +132,7 @@
                     }
                 }
                 for(var i=0; i<bages.length; i++){
-                    $(".image-"+i).css("background-image",  "url("+UPLOAD_URL+"bage/"+bages[i]["url"]+")");
+                    $(".image-"+i).css("background-image",  "url("+UPLOAD_URL+"bage/"+bages[i][1]+")");
                 }
             }
             localStorage.setItem(sessionId, JSON.stringify(bages));

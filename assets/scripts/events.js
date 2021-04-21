@@ -194,6 +194,7 @@ var KTDatatableRemoteAjaxDemo = function() {
                     var data = JSON.parse(response);
                     if(data.success == true){
                         toastr.success(data.msg);
+                        $("#kt_select2_modal").modal('hide');
                     }else{
                         toastr.error(data.msg)
                     }
@@ -229,7 +230,7 @@ function onEdit(id){
         dataType: "json",
         encode: true,
     }).done(function (data) {
-        var row = data["data"][0];
+        var row = data["data"];
         $("#id").val(row["id"]);
         $("#title").val(row["title"]);
         $("#input_user").val(row["input_user"]);

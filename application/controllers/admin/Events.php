@@ -44,7 +44,6 @@ class Events extends AdminController {
 		{
 				$file =$this->upload->data();
 				$this->event_model->updateData(array("bage"=>$file["file_name"], "id"=>$event_id));
-				$this->json(array("success"=>true, "msg"=>"Success"));
 		}
 		$this->json(array("success" => true, "msg"=>"Success!"));
 	}
@@ -61,10 +60,16 @@ class Events extends AdminController {
 	}
 
 	public function api(){
-		$data["data"] = $this->event_model->getAll();
+		$id = $this->input->post("query[id]");
+		if($id){
+			$data["data"] = $this->event_model->getDataById($id);
+		}else{
+			$data["data"] = $this->event_model->getAll();
+		}	
+		
 		$this->json($data);
 	}
-
+	
 	public function qrGen(){
 		$id = $this->input->post("id");
 		$this->load->library('ciqrcode');

@@ -207,8 +207,17 @@
         <?php if(isset($event)){?>
         function startGame(){
             var bages = [];
-            var sessionId = "imgcomp-" + makeid(15);
-            localStorage.setItem(sessionId, JSON.stringify(bages));
+            for (var i = 0; i < localStorage.length; i++) {
+                var str = localStorage.key(i);
+                if(str.includes("imgcomp-")){
+                    sessionId = str;
+                }
+            }
+            if(sessionId == "")
+                var sessionId = "imgcomp-" + makeid(15);
+            
+                localStorage.setItem(sessionId, JSON.stringify(bages));
+
             window.location = "<?=base_url()?>welcome/event/<?=$event["id"]?>/1";
         }
         <?php }?>
