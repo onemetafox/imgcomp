@@ -43,8 +43,9 @@ class Welcome extends AdminController {
 		$this->load->view("public/index", $data);
 	}
 
-	public function bage($id){
-		$event = $this->event_model->getDataById($id);
+	public function bage($id, $sessionId){
+		$data["event"] = $this->event_model->getDataById($id);
+		$data["sessionId"] = $sessionId;
 		$this->load->view("public/bage", $data);
 	}
 	
