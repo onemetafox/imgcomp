@@ -154,6 +154,7 @@
         
         var index = '<?= isset($index)?$index:""?>';
         var count = 0;
+        // part to show the image pairs. Index is the stage of current
         <?php if(isset($index)) {?>
           var positions = JSON.parse('<?=$file["position"]?>');
           $('#circle').circleProgress({
@@ -204,19 +205,25 @@
             }
         }
         <?php } ?>
+
+        // part to show the start page before go to game. 
         <?php if(isset($event)){?>
+            var sessionId = "";
         function startGame(){
             var bages = [];
+            //  check the imgcomp- string to find the already added localstorage. 
+            //  If the storage already exist then skip to create and if there is not, create one storage
             for (var i = 0; i < localStorage.length; i++) {
                 var str = localStorage.key(i);
                 if(str.includes("imgcomp-")){
                     sessionId = str;
                 }
             }
-            if(sessionId == "")
+            if(!sessionId){
                 var sessionId = "imgcomp-" + makeid(15);
             
                 localStorage.setItem(sessionId, JSON.stringify(bages));
+            }
 
             window.location = "<?=base_url()?>welcome/event/<?=$event["id"]?>/1";
         }

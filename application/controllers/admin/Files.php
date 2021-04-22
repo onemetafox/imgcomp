@@ -9,22 +9,28 @@ class Files extends AdminController {
 		parent::__construct();
 	}
 
+
 	public function index()
 	{
 		$data["page_title"] = "Files";
 		$this->render("admin/files", $data);
 	}
 
+	/** function to save one image pair */
 	public function save(){
 		
 		$data = $this->input->post();
+
+		//get position array from the api without the start and end quaots mark
 		$data["position"] = json_decode($data["position"]);
+		// check insert or update
 		if($data["id"]){
 			$this->file_model->updateData($data);
 			$pair_id = $data["id"];
 		}else{
 			$pair_id = $this->file_model->setData($data);
 		}
+		// upload file pairs
 		if(isset($_FILES["file1"]))
 			if ( 0 < $_FILES['file1']['error'] ) {
 				echo 'Error: ' . $_FILES['file']['error'] . '<br>';
@@ -42,10 +48,14 @@ class Files extends AdminController {
 				$data["img_2"] = $pair_id."_1.jpg";
 			}
 		$data["id"] = $pair_id;
+
+		// update file pair information
 		$this->file_model->updateData($data);
 		$this->json(array("success"=>true, "msg"=>"Success!", "data" => $data));
 		
 	}
+
+	// delete image pair
 	public function delete($id){
 		$this->recipe->unsetDataById($id);
 		$this->json(array("success"=>true, "msg"=>"Deleted!"));

@@ -32,6 +32,7 @@ class Welcome extends AdminController {
 		$this->render("admin/events", $data);		
 	}
 
+	// funtion to return event view for the public user
 	public function event($id, $index = null){
 		if($index){
 			$files = $this->file_model->getDataByParam(array("event_id"=>$id));
@@ -43,6 +44,7 @@ class Welcome extends AdminController {
 		$this->load->view("public/index", $data);
 	}
 
+	// return badge image to public user who have done game of 5 pairs
 	public function bage($id, $sessionId){
 		$data["event"] = $this->event_model->getDataById($id);
 		$data["sessionId"] = $sessionId;

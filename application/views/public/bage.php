@@ -122,18 +122,22 @@
         var bages = JSON.parse(localStorage.getItem(sessionId));
         
         jQuery(document).ready(function () {
-            
+            // part to check the bages length.
             if(bages.length == 0){
                 bages.push(data);
             }else{
+                // skip already added bage or event id
+                var flag = false;
                 for(var i=0; i<bages.length; i++){
-                    if(bages[i]["id"] != data["id"]){
-                        bages.push(data);
+                    if(bages[i][0] == data[0]){
+                        flage == true;
                     }
                 }
-                for(var i=0; i<bages.length; i++){
-                    $(".image-"+i).css("background-image",  "url("+UPLOAD_URL+"bage/"+bages[i][1]+")");
-                }
+                if(!flag)
+                    bages.push(data);
+            }
+            for(var i=0; i<bages.length; i++){
+                $(".image-"+i).css("background-image",  "url("+UPLOAD_URL+"bage/"+bages[i][1]+")");
             }
             localStorage.setItem(sessionId, JSON.stringify(bages));
 
